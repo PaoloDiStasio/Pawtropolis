@@ -55,33 +55,11 @@ public class ZooController {
 		return animalsWithWings;
 	}
 
-	public Animal returnRecordAnimal(BiPredicate<Animal, Animal> compareAnimals) {
-		Animal recordAnimal = animals.get(0);
+	public <T> T returnRecordAnimal(BiPredicate<T, T> compareAnimals, ArrayList<T> animals) {
 		
-		for(Animal animal : animals) {
-			if(compareAnimals.test(animal, recordAnimal)) {
-				recordAnimal = animal;
-			}
-		}
-		return recordAnimal;
-	}
+		T recordAnimal = animals.get(0);
 		
-	
-	public AnimalWithTail returnRecordAnimalWithTail(BiPredicate<AnimalWithTail, AnimalWithTail> compareAnimals) {
-		AnimalWithTail recordAnimal = animalsWithTail.get(0);
-		
-		for(AnimalWithTail animal : animalsWithTail) {
-			if(compareAnimals.test(animal, recordAnimal)) {
-				recordAnimal = animal;
-			}
-		}
-		return recordAnimal;
-	}
-	
-	public AnimalWithWings returnRecordAnimalWithWings(BiPredicate<AnimalWithWings, AnimalWithWings> compareAnimals) {
-		AnimalWithWings recordAnimal = animalsWithWings.get(0);
-		
-		for(AnimalWithWings animal : animalsWithWings) {
+		for(T animal : animals) {
 			if(compareAnimals.test(animal, recordAnimal)) {
 				recordAnimal = animal;
 			}

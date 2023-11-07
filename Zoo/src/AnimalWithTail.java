@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class AnimalWithTail extends Animal {
+public abstract class AnimalWithTail extends Animal {
 
 	private float tailLenght;
 	

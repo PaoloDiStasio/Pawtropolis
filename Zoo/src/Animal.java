@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class Animal {
+public abstract class Animal {
 
 	private String name;
 	private String favoriteFood;

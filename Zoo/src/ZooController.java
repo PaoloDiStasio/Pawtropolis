@@ -54,7 +54,7 @@ public class ZooController {
 	public ArrayList<AnimalWithWings> getAnimalsWithWings() {
 		return animalsWithWings;
 	}
-	
+
 	public Animal returnRecordAnimal(BiPredicate<Animal, Animal> compareAnimals) {
 		Animal recordAnimal = animals.get(0);
 		
@@ -65,6 +65,7 @@ public class ZooController {
 		}
 		return recordAnimal;
 	}
+		
 	
 	public AnimalWithTail returnRecordAnimalWithTail(BiPredicate<AnimalWithTail, AnimalWithTail> compareAnimals) {
 		AnimalWithTail recordAnimal = animalsWithTail.get(0);

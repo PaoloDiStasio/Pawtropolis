@@ -25,13 +25,13 @@ public class Main {
 		
 		ZooController zooController = new ZooController();
 		
-		zooController.addEagle(aquilotto);
-		zooController.addEagle(lazio);
+
 		zooController.addLion(leone);
 		zooController.addTiger(tigro);
 		zooController.addTiger(tigress);
 		zooController.addLion(leo);
-
+		zooController.addEagle(aquilotto);
+		zooController.addEagle(lazio);
 
 		
 		BiPredicate<Animal, Animal> tallestTiger = (tiger1, tiger2) -> tiger1 instanceof Tiger && tiger1.getHeight() > tiger2.getHeight(); 
@@ -40,7 +40,7 @@ public class Main {
 		BiPredicate<Animal, Animal> shortestLion = (lion1, lion2) -> lion1 instanceof Lion && lion1.getHeight() < lion2.getHeight();
 		System.out.println("Il leone più basso: \n Nome: " +  zooController.returnRecordAnimal(shortestLion).getName() + ", Altezza: " + zooController.returnRecordAnimal(shortestLion).getHeight() + " m");
 
-		BiPredicate<Animal, Animal> heaviestEagle = (eagle1, eagle2) -> eagle1 instanceof Eagle && eagle1.getHeight() > eagle2.getHeight();
+		BiPredicate<Animal, Animal> heaviestEagle = (eagle1, eagle2) -> eagle1 instanceof Eagle  && eagle1.getWeight() > eagle2.getWeight();
 		System.out.println("L'aquila più pesante: \n Nome: " +  zooController.returnRecordAnimal(heaviestEagle).getName() + ", Peso: " + zooController.returnRecordAnimal(heaviestEagle).getWeight() + " kg");
 
 		BiPredicate<AnimalWithTail, AnimalWithTail> longestTailAnimal = (tail1, tail2) -> tail1 instanceof AnimalWithTail && tail1.getTailLenght() > tail2.getTailLenght();

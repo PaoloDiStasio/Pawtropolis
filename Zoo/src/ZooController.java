@@ -12,8 +12,8 @@ public class ZooController {
 	
 	Map<Class<? extends Animal>, List<Animal>> animals = new HashMap<>(); 
 	
-	public void addAnimal(Class classname, Animal animal) {
-		animals.computeIfAbsent(classname, k -> new ArrayList<>()).add(animal);
+	public <T extends Animal> void addAnimal(T animal) {
+		animals.computeIfAbsent(animal.getClass(), k -> new ArrayList<>()).add(animal);
 	}
 	
 	public <T extends Animal> List<T> getAnimal(Class<T> classname){
@@ -26,7 +26,6 @@ public class ZooController {
 				.map(classname::cast)
 				.collect(Collectors.toList());
 	}
-	
 	
 	public <T extends Animal> T returnRecordAnimal(BiPredicate<T, T> compareAnimals, Class<T> classname){
 		T recordAnimal = null;

@@ -16,6 +16,11 @@ public abstract class AnimalWithTail extends Animal {
 	public void setTailLenght(float tailLenght) {
 		this.tailLenght = tailLenght;
 	}
+	
+	public String toString() {
+		String animalWithTailInfo = "Name: " + getName() + ", favorite food: " + getFavoriteFood() + ", age: " + getAge() + ", date of arrival: " + getArrivalDate() + ", weight: " + getWeight() + ", height: " + getHeight() + ", lenght of tail: " + getTailLenght() + "\n";
+		return animalWithTailInfo;
+	}
 
 
 }

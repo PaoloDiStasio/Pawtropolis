@@ -17,6 +17,10 @@ public abstract class AnimalWithWings extends Animal {
 		this.wingspan = wingspan;
 	}
 
+	public String toString() {
+		String animalWithWingsInfo = "Name: " + getName() + ", favorite food: " + getFavoriteFood() + ", age: " + getAge() + ", date of arrival: " + getArrivalDate() + ", weight: " + getWeight() + ", height: " + getHeight() + ", wingspan: " + getWingspan() + "\n";
+		return animalWithWingsInfo;
+	}
 
 
 		
